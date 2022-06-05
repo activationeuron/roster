@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import CSVFileValidator from 'csv-file-validator';
 import { CSVConfig } from '../utils/csvConfig';
 import { useReducer, createContext, useContext } from 'react';

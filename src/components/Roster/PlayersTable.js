@@ -78,7 +78,7 @@ function PlayersTable() {
         ),
       },
     ],
-    []
+    [rosterDispatcher, uiDispatcher]
   );
 
   const {
