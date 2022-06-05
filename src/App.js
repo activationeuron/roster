@@ -1,31 +1,36 @@
-import { useMachine } from '@xstate/react';
-import { useContext } from 'react';
-import PlayersTable from './components/Roster/PlayersTable';
-import TableHeader from './components/Roster/TableHeader';
-import PlayerEditor from './components/models/PlayerEditor';
-import PlayerImporter from './components/models/PlayerImporter';
-import { appMachine } from './state/appMachine';
-import { AppContext, AppProvider } from './state/AppState';
-import Roster from './components/Roster/Index';
+import { useUiContext } from './state/UIProvider';
 
+import RosterWindow from './components/Roster/Index';
+import Logo from './components/icons/LogoIcon';
+import RosterIcon from './components/icons/RosterIcon';
+import PlayGroundIcon from './components/icons/PlayGroundIcon';
 function App() {
-  const [state, send] = useContext(AppContext);
-
+  const {
+    state: { showTable },
+    uiDispatcher,
+  } = useUiContext();
   return (
-    <div className='App bg-slate-800 min-h-screen min-w-screen '>
-      {/* player Modle */}
-
-      <Roster />
+    <div className='App bg-slate-800 min-h-screen min-w-screen flex'>
+      <div className='w-14 bg-gray-800 flex  flex-col my-10 items-center space-y-8'>
+        <Logo />
+        <div
+          onClick={() =>
+            uiDispatcher({ type: 'TOGGLE_WINDOW', payload: false })
+          }
+        >
+          <RosterIcon active={showTable} />
+        </div>
+        <div
+          onClick={() => uiDispatcher({ type: 'TOGGLE_WINDOW', payload: true })}
+        >
+          <PlayGroundIcon active={!showTable} />
+        </div>
+      </div>
+      <div className='w-screen'>
+        <RosterWindow />
+      </div>
     </div>
   );
 }
 
 export default App;
-
-// <div>{JSON.stringify(state.context)}</div>
-//       <button onClick={() => send('IMPORT_PLAYER')}> select Story </button>
-//       {state.matches('playerImporter') ? (
-//         <PlayerPicker onFileSelect={onFileSelect} state={state} />
-//       ) : (
-//         ''
-//       )}

@@ -9,4 +9,50 @@
   .model-bg {
     @apply fixed inset-0 z-30 bg-black opacity-25;
   }
+  .nutral-bg {
+    @apply bg-[#222222];
+  }
+  .nutral-bg-secondary {
+    @apply bg-[#2D2D2D];
+  }
+  .input-primary {
+    @apply py-2 rounded-md px-5 nutral-bg text-white  border-color border-[1px] outline-none;
+  }
+  .border-color {
+    @apply border-[#494949];
+  }
+  .primary-yellow-bg {
+    @apply bg-[#FEA013];
+  }
+  .primary-yellow-text {
+    @apply text-[#FEA013];
+  }
+  .player-circle {
+    @apply bg-gray-700 w-8 h-8 rounded-full  border-2 flex items-center justify-center;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #6d6d6d;
+}
+
+.fieldLines {
+  background-image: url('/public/images/lines.png');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  z-index: 10;
+  background-repeat: no-repeat;
 }

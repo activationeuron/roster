@@ -1,41 +1,37 @@
-import React, { useContext } from 'react';
-import { AppContext } from '../../state/AppState';
+import React from 'react';
 import PlayerEditor from '../models/PlayerEditor';
 import PlayersTable from './PlayersTable';
 import TableHeader from './TableHeader';
 import PlayerImporter from '../models/PlayerImporter';
+import { useUiContext } from '../../state/UIProvider';
+import DeletePlayer from '../models/DeletePlayer';
+import Formations from '../formation';
 function Roster() {
-  const onFileSelect = (event) => {
-    console.log(event);
-    send({ type: 'FILE_SELECT', value: event });
-  };
-  const [state, send] = useContext(AppContext);
+  const {
+    state: { showImporter, editorModel, deletingPlayer, showTable },
+    uiDispatcher,
+  } = useUiContext();
 
   return (
-    <div className='App bg-slate-800 min-h-screen min-w-screen flex'>
-      <div className='w-10 bg-black'></div>
-      <div className='w-full p-8'>
-        <div className=' flex flex-col w-full'>
-          {/* player Modle */}
-          {state.matches('playerImporter') ? (
-            <PlayerImporter send={send} onFileSelect={onFileSelect} />
-          ) : (
-            ''
-          )}
-          {/* Player Editor */}
-          {state.matches('editingPlayer') ? (
-            <PlayerEditor send={send} state={state} />
-          ) : (
-            ''
-          )}
-          <div className='my-4 bg-gray-700 flex flex-col  '>
-            <TableHeader
-              onFileSelect={onFileSelect}
-              send={send}
-              state={state}
+    <div className='App bg-[#222222] min-h-screen min-w-screen flex'>
+      <div className='w-full p-8 flex '>
+        <div className=' flex flex-col  w-full'>
+          {showImporter ? (
+            <PlayerImporter
+              uiDispatch={uiDispatcher}
+              showImporter={showImporter}
             />
+          ) : (
+            ''
+          )}
+          {/* show model when deleing  */}
+          {deletingPlayer ? <DeletePlayer /> : ''}
+
+          {editorModel ? <PlayerEditor /> : ''}
+          <div className='my-4  flex flex-col '>
+            <TableHeader />
           </div>
-          <PlayersTable state={state} send={send} />
+          <>{!showTable ? <PlayersTable /> : <Formations />}</>
         </div>
       </div>
     </div>
