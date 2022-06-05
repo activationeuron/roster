@@ -1,10 +1,4 @@
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { useRosterContext } from '../../state/RsoterProvider';
 import { UIContext } from '../../state/UIProvider';
 import Close from '../icons/CloseIcon';

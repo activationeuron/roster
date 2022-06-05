@@ -16,6 +16,7 @@ function Formations() {
     rosterDispatcher({ type: 'SET_MATCH_PLAYERS', payload: matchPlayers });
     makeFormation(matchPlayers)(rosterDispatcher);
   }, []);
+
   return (
     <div className=' w-full flex flex-grow space-x-6'>
       {matchError ? <PlaygroundError error={matchError} /> : null}
