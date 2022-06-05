@@ -96,7 +96,7 @@ function PlayersTable() {
 
   return (
     <div className='nutral-bg-secondary rounded-xl text-white h-[650px] overflow-y-scroll  relative'>
-      <table {...getTableProps()} className='w-full relative  '>
+      <table {...getTableProps()} className='w-full relative my-4  '>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
