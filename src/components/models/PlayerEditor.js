@@ -20,7 +20,7 @@ function PlayerEditor() {
     } else {
       setIsChanged(false);
     }
-  }, [player]);
+  }, [player, selectedPlayer]);
 
   return (
     <>

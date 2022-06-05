@@ -33,7 +33,7 @@ function TableHeader() {
         rosterDispatcher({ type: 'SEARCH', payload: searchTerm });
       }
     },
-    [searchTerm]
+    [searchTerm, rosterDispatcher]
   );
 
   useEffect(() => {

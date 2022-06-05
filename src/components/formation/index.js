@@ -15,7 +15,7 @@ function Formations() {
     const matchPlayers = players.filter((player) => player.starter === 'Yes');
     rosterDispatcher({ type: 'SET_MATCH_PLAYERS', payload: matchPlayers });
     makeFormation(matchPlayers)(rosterDispatcher);
-  }, []);
+  }, [rosterDispatcher, players, makeFormation]);
 
   return (
     <div className=' w-full flex flex-grow space-x-6'>
