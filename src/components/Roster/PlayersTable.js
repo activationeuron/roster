@@ -49,6 +49,7 @@ function PlayersTable() {
       {
         Header: 'Wight',
         accessor: 'wight',
+        Cell: (row) => `${row.row.original.wight} kg`,
       },
       {
         Header: 'Nationality',

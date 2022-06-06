@@ -26,7 +26,7 @@ function PlayerImporter({ uiDispatch, showImporter }) {
           </div>
           <div>
             <div className='py-2'>Roster File</div>
-            <label for='files' className='block my-5'></label>
+            {/* <label for='files' className='block my-5'></label> */}
 
             <input
               type='file'
@@ -34,7 +34,7 @@ function PlayerImporter({ uiDispatch, showImporter }) {
               id='files'
               accept='.csv'
               class={
-                'text-sm  rounded-xl ile:mr-5 file:py-2 file:px-6 file:rounded-lg file:border-0 file:text-sm file:font-medium border-2 ' +
+                'text-sm rounded-xl ile:mr-5 file:py-2 file:px-6 file:rounded-lg file:border-0 file:text-sm file:font-medium border-2 file:nutral-bg file:text-white ' +
                 [csvErr.length ? 'border-red-500' : 'border-color']
               }
               onChange={(e) => handleFileSelect(e)(rosterDispatcher)}
