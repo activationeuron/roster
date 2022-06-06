@@ -41,7 +41,10 @@ const actions = {
       dispatch({
         type: 'SET_MATCH_ERROR',
         payload: {
-          error: 'Not enough starter',
+          error:
+            matchPlayers.length > 11
+              ? 'Not Many starter'
+              : 'Not enough starter',
           text: 'Your team doesn’t have enough starters  for one or more of the positions in the 4-3-3 formation',
         },
       });
