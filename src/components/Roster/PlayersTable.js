@@ -106,11 +106,29 @@ function PlayersTable() {
             </tr>
           ))}
         </thead>
-        <tbody {...getTableBodyProps()} className='w-full  '>
-          {rows.map((row) => {
-            prepareRow(row);
-            return <PlayerRow row={row} />;
-          })}
+        <tbody {...getTableBodyProps()} className='w-full   '>
+          {(players.length &&
+            rows.map((row) => {
+              prepareRow(row);
+              return <PlayerRow row={row} />;
+            })) || (
+            <div className='w-full flex justify-center  absolute top-72 text-center '>
+              <div>
+                <div>You do note have any Players in roster </div>
+                <div
+                  className='primary-yellow-text'
+                  onClick={() =>
+                    uiDispatcher({
+                      type: 'TOGGLE_IMPORTER',
+                      payload: true,
+                    })
+                  }
+                >
+                  Import Team
+                </div>
+              </div>
+            </div>
+          )}
         </tbody>
       </table>
     </div>
