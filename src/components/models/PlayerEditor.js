@@ -151,7 +151,7 @@ function PlayerEditor() {
                   type='radio'
                   value='Yes'
                   checked={player?.starter === 'Yes'}
-                  className='h-5 w-5'
+                  className='h-5 w-5 accent-orange-500'
                   name='starter'
                   onChange={(e) =>
                     setPlayer({ ...player, starter: e.target.value })
@@ -166,7 +166,7 @@ function PlayerEditor() {
                   type='radio'
                   value='No'
                   name='starter'
-                  className='h-5 w-5'
+                  className='h-5 w-5 accent-orange-500'
                   checked={player?.starter === 'No'}
                   onChange={(e) => {
                     setPlayer({ ...player, starter: e.target.value });
