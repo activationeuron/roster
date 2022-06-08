@@ -37,6 +37,17 @@ const actions = {
     }),
   // create formations
   makeFormation: (matchPlayers) => (dispatch) => {
+    if (matchPlayers.length === 0) {
+      dispatch({
+        type: 'SET_MATCH_ERROR',
+        payload: {
+          error: 'No Player data found',
+          text: 'Please import your roster first',
+        },
+      });
+      return;
+    }
+
     if (!(matchPlayers.length === 11)) {
       dispatch({
         type: 'SET_MATCH_ERROR',
