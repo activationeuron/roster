@@ -5,7 +5,7 @@ import { useUiContext } from '../../state/UIProvider';
 import Close from '../icons/CloseIcon';
 function PlayerEditor() {
   const {
-    state: { selectedPlayer },
+    state: { selectedPlayer, players },
     rosterDispatcher,
   } = useRosterContext();
 
@@ -105,14 +105,22 @@ function PlayerEditor() {
             <label htmlFor='weight' className='my-2'>
               Nationality
             </label>
-            <input
-              type='text'
-              className='input-primary w-full'
+
+            <select
               value={player?.nationality}
               onChange={(e) => {
                 setPlayer({ ...player, nationality: e.target.value });
               }}
-            />
+              className='py-2 input-primary w-full '
+            >
+              {[...new Set(players.map((player) => player.nationality))].map(
+                (nation) => (
+                  <option className='input-primary my-2' value={nation}>
+                    {nation}
+                  </option>
+                )
+              )}
+            </select>
           </div>
 
           <div className='flex flex-col'>
