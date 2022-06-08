@@ -115,7 +115,7 @@ function PlayersTable() {
             })) || (
             <div className='w-full flex justify-center  absolute top-72 text-center '>
               <div>
-                <div>You do note have any Players in roster </div>
+                <div>You do not have any Players in roster </div>
                 <div
                   className='primary-yellow-text'
                   onClick={() =>
