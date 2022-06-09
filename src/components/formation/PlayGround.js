@@ -11,95 +11,97 @@ function PlayGround() {
   };
 
   return (
-    <div className=' w-full relative h-full bg-green-600 fieldLines rounded-md shadow-2xl '>
+    <div className=' w-full relative h-full bg-green-600  rounded-md shadow-2xl p-10'>
       <>
-        <div className=' absolute top-1/2   '>
-          {formation?.goalKeeper?.map((player) => (
-            <div
-              className='flex flex-col justify-center items-center text-white'
-              onClick={() => handlePlayerInfo(player)}
-            >
+        <div className='fieldLines relative border-[1px]'>
+          <div className=' absolute top-1/2   '>
+            {formation?.goalKeeper?.map((player) => (
               <div
-                className={
-                  'player-circle ' +
-                  [
-                    playerInfo?.jerseyNumber === player.jersey
-                      ? 'bg-yellow-600'
-                      : '',
-                  ]
-                }
+                className='flex flex-col justify-center items-center text-white'
+                onClick={() => handlePlayerInfo(player)}
               >
-                {player?.jersey}
+                <div
+                  className={
+                    'player-circle ' +
+                    [
+                      playerInfo?.jerseyNumber === player.jersey
+                        ? 'bg-yellow-600'
+                        : '',
+                    ]
+                  }
+                >
+                  {player?.jersey}
+                </div>
+                <div>{player.name}</div>
               </div>
-              <div>{player.name}</div>
-            </div>
-          ))}
-        </div>
-        <div className=' absolute left-36 inset-x-1/2 flex flex-col items-stretch justify-around h-full text-white '>
-          {formation?.defender?.map((player) => (
-            <div
-              className='flex flex-col justify-center items-center'
-              onClick={() => handlePlayerInfo(player)}
-            >
+            ))}
+          </div>
+          <div className=' absolute left-36 inset-x-1/2 flex flex-col items-stretch justify-around h-full text-white '>
+            {formation?.defender?.map((player) => (
               <div
-                className={
-                  'player-circle ' +
-                  [
-                    playerInfo?.jerseyNumber === player.jersey
-                      ? 'bg-yellow-600'
-                      : '',
-                  ]
-                }
+                className='flex flex-col justify-center items-center'
+                onClick={() => handlePlayerInfo(player)}
               >
-                {player?.jersey}
+                <div
+                  className={
+                    'player-circle ' +
+                    [
+                      playerInfo?.jerseyNumber === player.jersey
+                        ? 'bg-yellow-600'
+                        : '',
+                    ]
+                  }
+                >
+                  {player?.jersey}
+                </div>
+                <div className='w-16 text-center'>{player.name}</div>
               </div>
-              <div className='w-16 text-center'>{player.name}</div>
-            </div>
-          ))}
-        </div>
-        <div className=' absolute left-1/2   inset-x-1/2 flex flex-col items-stretch justify-around h-full '>
-          {formation?.mid?.map((player) => (
-            <div
-              className='flex flex-col justify-center items-center text-white'
-              onClick={() => handlePlayerInfo(player)}
-            >
+            ))}
+          </div>
+          <div className=' absolute left-1/2  top-6  inset-x-1/2 flex flex-col items-stretch justify-around h-full '>
+            {formation?.mid?.map((player) => (
               <div
-                className={
-                  'player-circle ' +
-                  [
-                    playerInfo?.jerseyNumber === player.jersey
-                      ? 'bg-yellow-600'
-                      : '',
-                  ]
-                }
+                className='flex flex-col justify-center items-center text-white'
+                onClick={() => handlePlayerInfo(player)}
               >
-                {player?.jersey}
+                <div
+                  className={
+                    'player-circle ' +
+                    [
+                      playerInfo?.jerseyNumber === player.jersey
+                        ? 'bg-yellow-600'
+                        : '',
+                    ]
+                  }
+                >
+                  {player?.jersey}
+                </div>
+                <div className='w-16 text-center'>{player.name}</div>
               </div>
-              <div className='w-16 text-center'>{player.name}</div>
-            </div>
-          ))}
-        </div>
-        <div className=' absolute left-2/3 flex flex-col items-stretch justify-around h-full '>
-          {formation?.forward?.map((player) => (
-            <div
-              className='flex flex-col justify-center items-center text-white'
-              onClick={() => handlePlayerInfo(player)}
-            >
+            ))}
+          </div>
+          <div className=' absolute left-2/3 flex flex-col items-stretch justify-around h-full '>
+            {formation?.forward?.map((player) => (
               <div
-                className={
-                  'player-circle ' +
-                  [
-                    playerInfo?.jerseyNumber === player.jersey
-                      ? 'bg-yellow-600'
-                      : '',
-                  ]
-                }
+                className='flex flex-col justify-center items-center text-white'
+                onClick={() => handlePlayerInfo(player)}
               >
-                {player?.jersey}
+                <div
+                  className={
+                    'player-circle ' +
+                    [
+                      playerInfo?.jerseyNumber === player.jersey
+                        ? 'bg-yellow-600'
+                        : '',
+                    ]
+                  }
+                >
+                  {player?.jersey}
+                </div>
+                <div>{player.name}</div>
               </div>
-              <div>{player.name}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </>
     </div>
