@@ -1,6 +1,6 @@
 import { useUiContext } from './state/UIProvider';
 
-import RosterWindow from './components/Roster/Index';
+import RosterWindow from './components/roster/Index';
 import Logo from './components/icons/LogoIcon';
 import RosterIcon from './components/icons/RosterIcon';
 import PlayGroundIcon from './components/icons/PlayGroundIcon';

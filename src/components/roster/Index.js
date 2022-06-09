@@ -5,7 +5,7 @@ import TableHeader from './TableHeader';
 import PlayerImporter from '../models/PlayerImporter';
 import { useUiContext } from '../../state/UIProvider';
 import DeletePlayer from '../models/DeletePlayer';
-import Formations from '../formation';
+import Formations from '../formation/Index';
 function Roster() {
   const {
     state: { showImporter, editorModel, deletingPlayer, showTable },

@@ -45,10 +45,13 @@ function PlayerInfo({ playerInfo }) {
               title: 'Clean Sheets',
               info: playerInfo?.Goals,
             })}
-            {playerScores({
-              title: 'Saves',
-              info: playerInfo?.saves,
-            })}
+
+            {playerInfo.pos === 'Goalkeeper'
+              ? playerScores({
+                  title: 'Saves',
+                  info: playerInfo?.saves,
+                })
+              : ''}
           </div>
         </div>
       ) : (
