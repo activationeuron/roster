@@ -54,6 +54,7 @@
   background-position: center;
   height: 100%;
   z-index: 10;
+  position: relative;
   background-repeat: no-repeat;
 }
 
@@ -61,4 +62,14 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.radial-bg {
+  background: radial-gradient(
+    62.62% 73.52% at 50% 50%,
+    rgba(58, 169, 76, 0) 0%,
+    rgba(27, 77, 35, 0.42) 54.17%,
+    rgba(15, 45, 20, 0.45) 73.44%,
+    rgba(0, 0, 0, 0.33) 100%
+  );
 }

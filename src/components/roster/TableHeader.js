@@ -98,7 +98,7 @@ function TableHeader() {
             <button
               className={
                 'text-white py-2 rounded-lg px-3 border-color border-2 ' +
-                [!players.length ? 'primary-yellow-bg' : '']
+                [!players.length ? 'primary-yellow-bg hover:bg-[#BA4A0C]' : '']
               }
               onClick={() =>
                 uiDispatcher({

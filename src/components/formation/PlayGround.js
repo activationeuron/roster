@@ -11,9 +11,9 @@ function PlayGround() {
   };
 
   return (
-    <div className=' w-full relative h-full bg-green-600  rounded-md shadow-2xl p-10'>
-      <>
-        <div className='fieldLines relative border-[1px] bg-blend-lighten	'>
+    <div className=' w-full relative h-full bg-green-600  rounded-md shadow-2xl p-10 '>
+      <div className='h-full radial-bg w-full rounded-md'>
+        <div className=' relative border-[1px] bg-blend-lighten 	fieldLines rounded-md'>
           <div className=' absolute top-1/2   '>
             {formation?.goalKeeper?.map((player) => (
               <div
@@ -103,7 +103,7 @@ function PlayGround() {
             ))}
           </div>
         </div>
-      </>
+      </div>
     </div>
   );
 }
