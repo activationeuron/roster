@@ -24,7 +24,11 @@ function PlayerRow({ row }) {
   };
   return (
     <>
-      <tr {...row.getRowProps()} className='text-center relative '>
+      <tr
+        {...row.getRowProps()}
+        className='text-center relative '
+        id={row.index}
+      >
         {row.cells.map((cell) => {
           return (
             <td

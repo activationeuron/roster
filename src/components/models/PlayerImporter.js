@@ -33,7 +33,7 @@ function PlayerImporter({ uiDispatch, showImporter }) {
               name='file'
               id='files'
               accept='.csv'
-              class={
+              className={
                 'text-sm rounded-xl ile:mr-5 file:py-2 file:px-6 file:rounded-lg file:border-0 file:text-sm file:font-medium border-2 file:nutral-bg file:text-white ' +
                 [csvErr.length ? 'border-red-500' : 'border-color']
               }
@@ -54,16 +54,16 @@ function PlayerImporter({ uiDispatch, showImporter }) {
               </div>
             ) : (
               <div className='text-red-500 py-2 px-2'>
-                <div className=''>Error </div>
+                <div>Error </div>
                 {csvErr.slice(0, 4).map((error) => {
                   return <div className='text-sm'>{error}</div>;
                 })}
               </div>
             )}
-            <div className=''>
+            <div>
               {players.length ? (
-                <table class=' '>
-                  <thead className=''>
+                <table>
+                  <thead>
                     <tr className='gap-10 flex  text-sm font-thin my-2'>
                       <th className='font-normal'>Total Players</th>
                       <th className='font-normal'>Defenders</th>

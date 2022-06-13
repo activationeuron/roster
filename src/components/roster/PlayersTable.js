@@ -96,7 +96,7 @@ function PlayersTable() {
   }, [search, setGlobalFilter]);
 
   return (
-    <div className='nutral-bg-secondary rounded-xl text-white h-[650px] overflow-y-scroll  relative'>
+    <div className='nutral-bg-secondary rounded-xl text-white h-[650px] overflow-y-scroll  flex flex-grow relative'>
       <table {...getTableProps()} className='w-full relative my-4  '>
         <thead>
           {headerGroups.map((headerGroup) => (
